@@ -3,7 +3,7 @@ import Productos from "../components/Productos";
 import Carrito from "../components/Carrito";
 
 const Inicio = () => {
-    const [carrito , setCarrito] = useState (["algo" , "algo mas"]);
+    const [carrito , setCarrito] = useState ([]);
 
     const agregarAlCarrito = (producto) =>{
         setCarrito([...carrito, producto]);

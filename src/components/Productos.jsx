@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const Productos = ({agregarProducto})=>{
 
     
-    const [productos, setProductos] = useState([{id:1,title:"prod1",price:1234}])
+    const [productos, setProductos] = useState([])
     const [cargando , setCargando] = useState(true);
     const [error , setError]= useState(null);
 
@@ -33,14 +33,15 @@ const Productos = ({agregarProducto})=>{
             <h2>Productos</h2>
             <ul>   
                 {productos.map( (producto) => {
-                    <li key={producto.id}>
-                       
-                        <p> Aca va un producto</p>
+                  return(
+                      <li key={producto.id}>
                        <p> {producto.title} : {producto.price}$ </p>
                         <img src={producto.image} height={80} width={80} alt={producto.title} />
                         <button onClick={()=> agregarProducto(producto)} > Agregar</button>
                         <Link  to={`/productos/${producto.id}`} > Detalles </Link>
                     </li>
+                  )
+                    
                 })}
             </ul>
         </div>
