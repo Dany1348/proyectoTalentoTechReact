@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 function Nav() {
     return (
         <nav style={{
@@ -10,16 +11,19 @@ function Nav() {
                 justifyContent: "space-around", margin: 0
             }}>
                 <li><a href="/" style={{
-                    color: "white",
+                    color: "yellow",
                     textDecoration: "none"
                 }}>Inicio</a></li>
                 <li><a href="/moda" style={{
-                    color: "white",
+                    color: "yellow",
                     textDecoration: "none"
-                }}>Moda</a></li><li><a href="/productos/13" style={{
-                    color: "white",
+                }}>Moda</a></li>
+                <li>
+                    <Link to={'/tecnologia'} style={{
+                    color: "yellow",
                     textDecoration: "none"
-                }}>ProductoDetalle</a></li>
+                }}> Tecnologia </Link>
+                </li>
             </ul>
         </nav>
     );

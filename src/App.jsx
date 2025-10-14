@@ -11,8 +11,10 @@ import Footer from './components/Footer';
 import Productos from './components/Productos';
 import Inicio from './pages/Inicio';
 import Moda from './pages/Moda';
+import Tecnologia from './pages/Tecnologia';
 import ProductoDetalle from './pages/ProductoDetalle';
 import { Route , Routes} from 'react-router-dom';
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,6 +27,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Inicio/>} />
           <Route path='/moda' element={<Moda/>}/>
+          <Route path='/tecnologia' element={<Tecnologia/>}/>
           <Route path='/productos/:id' element={<ProductoDetalle/>}/>
         </Routes>
 
