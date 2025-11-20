@@ -1,6 +1,8 @@
-import { useState , useEffect } from "react";
+import { useState , useEffect ,useContext } from "react";
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {CarritoContext} from '../context/CarritoContext.jsx';
+
 
 const Productos = ({agregarProducto})=>{
 
@@ -9,10 +11,15 @@ const Productos = ({agregarProducto})=>{
     const [cargando , setCargando] = useState(true);
     const [error , setError]= useState(null);
 
+    const { agregarAlCarrito } = useContext(CarritoContext);
+
     const URL = 'https://fakestoreapi.com/products/';
+    
+    // 'https://691ce990d58e64bf0d34613a.mockapi.io/api/v1';
+    const URL2 = 'https://691ce990d58e64bf0d34613a.mockapi.io/productos' ;
 
       useEffect(() => {
-    fetch(URL)
+    fetch(URL2)
       .then(respuesta => respuesta.json())
       .then( datos => { setProductos(datos);
         {console.log(datos);}
@@ -37,13 +44,15 @@ const Productos = ({agregarProducto})=>{
                       <li key={producto.id}>
                        <p> {producto.title} : {producto.price}$ </p>
                         <img src={producto.image} height={80} width={80} alt={producto.title} />
-                        <button onClick={()=> agregarProducto(producto)} > Agregar</button>
+                        <button onClick={()=> agregarAlCarrito(producto)} > Agregar</button>
                         <Link  to={`/productos/${producto.id}`} > Detalles </Link>
                     </li>
+                     
                   )
                     
                 })}
             </ul>
+            <Link  to={`/carrito`} > Ir al carrito </Link>
         </div>
     );
 };

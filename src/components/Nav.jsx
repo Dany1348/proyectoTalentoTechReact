@@ -10,14 +10,19 @@ function Nav() {
                 listStyle: "none", display: "flex",
                 justifyContent: "space-around", margin: 0
             }}>
-                <li><a href="/" style={{
+                <li>
+                <Link to={'/'} style={{
                     color: "yellow",
                     textDecoration: "none"
-                }}>Inicio</a></li>
-                <li><a href="/moda" style={{
+                }}> Inicio </Link></li>
+
+                <li>
+                <Link to={'/moda'} style={{
                     color: "yellow",
                     textDecoration: "none"
-                }}>Moda</a></li>
+                }}> Moda </Link>
+                </li>
+
                 <li>
                     <Link to={'/tecnologia'} style={{
                     color: "yellow",

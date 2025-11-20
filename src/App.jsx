@@ -14,6 +14,7 @@ import Moda from './pages/Moda';
 import Tecnologia from './pages/Tecnologia';
 import ProductoDetalle from './pages/ProductoDetalle';
 import { Route , Routes} from 'react-router-dom';
+import Carrito from './components/Carrito';
 
 
 function App() {
@@ -26,9 +27,11 @@ function App() {
         <Header/>
         <Routes>
           <Route path='/' element={<Inicio/>} />
+          <Route path='/carrito' element={<Carrito/>}/>
           <Route path='/moda' element={<Moda/>}/>
           <Route path='/tecnologia' element={<Tecnologia/>}/>
           <Route path='/productos/:id' element={<ProductoDetalle/>}/>
+
         </Routes>
 
         <Gallery />
