@@ -44,6 +44,7 @@ const Productos = ({ agregarProducto }) => {
           <ul>
             {productos.map((producto) => {
               return (
+                producto.cantidad > 0 ?
                 <div className="col-12 col-md-6 col-lg-4">
                   <li key={producto.id}>
                     <p> {producto.title} : {producto.price}$ </p>
@@ -54,8 +55,7 @@ const Productos = ({ agregarProducto }) => {
                     <Link to={`/productos/${producto.id}`} > Detalles </Link>
                   </li>
                 </div>
-
-
+                  : true 
               )
 
             })}

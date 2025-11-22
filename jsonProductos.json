@@ -9,7 +9,7 @@
   "rating": {
     "rate": 3.9,
     "count": 120
-  }
+  },"cantidad":100
 },
 
 {
@@ -22,7 +22,7 @@
   "rating": {
     "rate": 4.1,
     "count": 259
-  }
+  },"cantidad":100
 },
 
 {
@@ -35,7 +35,7 @@
   "rating": {
     "rate": 4.7,
     "count": 500
-  }
+  },"cantidad":100
 }
 ,
 {
@@ -48,7 +48,7 @@
   "rating": {
     "rate": 2.1,
     "count": 430
-  }
+  },"cantidad":100
 },
 
 {
@@ -61,7 +61,7 @@
   "rating": {
     "rate": 4.6,
     "count": 400
-  }
+  },"cantidad":100
 }
 ,
 {
@@ -74,7 +74,7 @@
   "rating": {
     "rate": 3.9,
     "count": 70
-  }
+  },"cantidad":100
 },
 {
   "id": 7,
@@ -86,7 +86,7 @@
   "rating": {
     "rate": 3,
     "count": 400
-  }
+  },"cantidad":100
 },
 
 {
@@ -99,7 +99,7 @@
   "rating": {
     "rate": 1.9,
     "count": 100
-  }
+  },"cantidad":100
 },
 {
   "id": 9,
@@ -111,7 +111,7 @@
   "rating": {
     "rate": 3.3,
     "count": 203
-  }
+  },"cantidad":100
 },
 {
   "id": 10,
@@ -123,7 +123,7 @@
   "rating": {
     "rate": 2.9,
     "count": 470
-  }
+  },"cantidad":100
 },
 {
   "id": 11,
@@ -135,7 +135,7 @@
   "rating": {
     "rate": 4.8,
     "count": 319
-  }
+  },"cantidad":100
 },
 
 {
@@ -148,7 +148,7 @@
   "rating": {
     "rate": 4.8,
     "count": 400
-  }
+  },"cantidad":100
 }
 ,{
   "id": 13,
@@ -160,7 +160,7 @@
   "rating": {
     "rate": 2.9,
     "count": 250
-  }
+  },"cantidad":100
 },
 {
   "id": 14,
@@ -172,7 +172,7 @@
   "rating": {
     "rate": 2.2,
     "count": 140
-  }
+  },"cantidad":100
 },
 {
   "id": 15,
@@ -184,7 +184,7 @@
   "rating": {
     "rate": 2.6,
     "count": 235
-  }
+  },"cantidad":100
 },
 {
   "id": 16,
@@ -196,7 +196,7 @@
   "rating": {
     "rate": 2.9,
     "count": 340
-  }
+  },"cantidad":100
 },
 {
   "id": 17,
@@ -208,7 +208,7 @@
   "rating": {
     "rate": 3.8,
     "count": 679
-  }
+  },"cantidad":100
 },
 {
   "id": 18,
@@ -220,7 +220,7 @@
   "rating": {
     "rate": 4.7,
     "count": 130
-  }
+  },"cantidad":100
 },
 {
   "id": 19,
@@ -232,7 +232,7 @@
   "rating": {
     "rate": 4.5,
     "count": 146
-  }
+  },"cantidad":100
 },
 {
   "id": 20,
@@ -244,7 +244,7 @@
   "rating": {
     "rate": 3.6,
     "count": 145
-  }
+  },"cantidad":100
 }
 ]
 
