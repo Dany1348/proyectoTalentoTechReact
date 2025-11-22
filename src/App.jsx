@@ -13,24 +13,34 @@ import Inicio from './pages/Inicio';
 import Moda from './pages/Moda';
 import Tecnologia from './pages/Tecnologia';
 import ProductoDetalle from './pages/ProductoDetalle';
-import { Route , Routes} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Carrito from './components/Carrito';
+import Login from './pages/Login';
+import HomeAdmin from './pages/HomeAdmin';
+import RutaProtegidaC from './components/RutaProtegidaC';
 
 
 function App() {
   const [count, setCount] = useState(0)
 
-  
+
   return (
     <>
       <div>
-        <Header/>
+        <Header />
         <Routes>
-          <Route path='/' element={<Inicio/>} />
-          <Route path='/carrito' element={<Carrito/>}/>
-          <Route path='/moda' element={<Moda/>}/>
-          <Route path='/tecnologia' element={<Tecnologia/>}/>
-          <Route path='/productos/:id' element={<ProductoDetalle/>}/>
+          <Route path='/' element={<Inicio />} />
+          <Route path='/admin' element={<HomeAdmin />} />
+         {/* <Route path='/carrito' element={<Carrito />} /> */}
+          <Route path='/carrito' element={
+            <RutaProtegidaC>
+              <Carrito />
+            </RutaProtegidaC>
+          } />
+          <Route path='/login' element={<Login />} />
+          <Route path='/moda' element={<Moda />} />
+          <Route path='/tecnologia' element={<Tecnologia />} />
+          <Route path='/productos/:id' element={<ProductoDetalle />} />
 
         </Routes>
 
@@ -39,7 +49,7 @@ function App() {
       </div>
 
 
-      
+
 
     </>
   )

@@ -29,6 +29,12 @@ function Nav() {
                     textDecoration: "none"
                 }}> Tecnologia </Link>
                 </li>
+                <li>
+                    <Link to={'/login'} style={{
+                    color: "yellow",
+                    textDecoration: "none"
+                }}> Login </Link>
+                </li>
             </ul>
         </nav>
     );
