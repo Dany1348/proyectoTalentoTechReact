@@ -18,6 +18,8 @@ import Carrito from './components/Carrito';
 import Login from './pages/Login';
 import HomeAdmin from './pages/HomeAdmin';
 import RutaProtegidaC from './components/RutaProtegidaC';
+import EditarProducto from './components/EditarProducto';
+import GestionProductos from './components/GestionProductos';
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Inicio />} />
           <Route path='/admin' element={<HomeAdmin />} />
+          <Route path='/editar' element={<EditarProducto />} />
+          <Route path='/gestionproductos' element={<GestionProductos />} />
          {/* <Route path='/carrito' element={<Carrito />} /> */}
           <Route path='/carrito' element={
             <RutaProtegidaC>

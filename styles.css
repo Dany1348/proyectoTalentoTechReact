@@ -153,7 +153,7 @@ h2{
   form label{
     display: inline-block;
     font-size: 1.2em;
-    color: blue;
+    color: rgb(0, 255, 247);
     width: 10%;
   }
   form input{
@@ -180,7 +180,7 @@ button{
     background-color: rgb(89, 166, 12);
     /*border-radius: 50px; */
     margin: 4%;
-    padding: 3px;
+    padding: 4px;
   }
 
   footer{
