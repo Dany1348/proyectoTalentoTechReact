@@ -1,4 +1,8 @@
 import { createContext, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
 
 export const ProductoContext = createContext();
 
@@ -7,6 +11,7 @@ export const ProductoProvider = ({ children }) => {
 
   const agregarProducto = (nuevoProducto) => {
     setProductos([...productos, nuevoProducto]);
+    //toast.success("Producto agregado al carrito!");
   };
 
   const editarProducto = (productoActualizado) => {

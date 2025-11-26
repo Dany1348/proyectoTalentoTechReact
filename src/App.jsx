@@ -20,6 +20,7 @@ import HomeAdmin from './pages/HomeAdmin';
 import RutaProtegidaC from './components/RutaProtegidaC';
 import EditarProducto from './components/EditarProducto';
 import GestionProductos from './components/GestionProductos';
+import Contenedor from './bootstrap/Contenedor';
 
 
 function App() {
@@ -45,7 +46,7 @@ function App() {
           <Route path='/moda' element={<Moda />} />
           <Route path='/tecnologia' element={<Tecnologia />} />
           <Route path='/productos/:id' element={<ProductoDetalle />} />
-
+          <Route path='/contenedor' element={<Contenedor/>}/>
         </Routes>
 
         <Gallery />

@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './Nav';
+import NavBar from './NavbarToggle';
 
 function Header() {
     return (
@@ -12,6 +13,7 @@ function Header() {
                 <img src="../src/img/tiger-feline-animal-image-pixabay-16.png" title="Logo de Tiger" id="Logo" width="6%"  alt="img tigre"/>                          
                 Tienda Talento Tech React </h1>
             <Nav></Nav>
+            <NavBar></NavBar>
         </header>
     );
 }
