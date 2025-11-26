@@ -14,7 +14,7 @@ const Login = () => {
     evento.preventDefault();
     // Simulamos la Autenticacion
     if(usuario == 'admin' && contrasenia == '123') {
-      login(usuario ,rol);
+      login(usuario ,"admin");
       navigate('/admin');
     } else if (contrasenia == '123' && rol == 'cliente'){
       login(usuario ,rol);

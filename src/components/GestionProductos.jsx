@@ -3,6 +3,9 @@ import FormProducto from "./FormProducto";
 import EditarProducto from "./EditarProducto";
 import styles from './GestionProducto.module.css';
 import CirclePlus from "../assets/CirclePlus";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const GestionProductos = () => {
   const [productos, setProductos] = useState([]);
@@ -69,7 +72,9 @@ const GestionProductos = () => {
 
   // Funcion para eliminar producto de la API
   const eliminarProducto = async (id) => {
-    const confirmar = window.confirm("¿Estás seguro de eliminar?");
+   //const confirmar = toast.warn("¿Estás seguro de eliminar?");
+   const confirmar = window.confirm("¿Estás seguro de eliminar?");
+    
 
     if (confirmar) {
       try {
@@ -110,6 +115,7 @@ const GestionProductos = () => {
               <h5>{producto.title}</h5>
               <p>Precio: ${producto.price}</p>
               <button style={{margin:"4px" , borderRadius:"10px"}} onClick={() => eliminarProducto(producto.id)}>Eliminar</button>
+              <ToastContainer toastOptions={{duration:20000}} />
             </div>
           ))}
         </div>

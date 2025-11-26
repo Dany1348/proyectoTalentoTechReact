@@ -1,12 +1,9 @@
 import { useState, useEffect, useContext } from "react";
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { CarritoContext } from '../context/CarritoContext.jsx';
 import { FaShoppingCart } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-
 
 const Productos = ({ agregarProducto }) => {
 
@@ -40,14 +37,14 @@ const Productos = ({ agregarProducto }) => {
   if (cargando) return ' Cargando productos ...';
   if (error) return error;
 
- /* const handleAddToCart = (producto) => {
-    agregarAlCarrito(producto);
-    toast.success("Producto agregado al carrito!");
-};*/
+  /* const handleAddToCart = (producto) => {
+     agregarAlCarrito(producto);
+     toast.success("Producto agregado al carrito!");
+ };*/
 
   return (
     <div>
-      <h2>Productos</h2>
+      <h2>Productos en Existencia</h2>
       <div className="container">
         <div className="row">
           <ul>
@@ -59,7 +56,8 @@ const Productos = ({ agregarProducto }) => {
                       <p> {producto.title} : {producto.price}$ </p>
                       <img style={{ margin: "4%", borderRadius: "5px" }} src={producto.image} height={80} width={80} alt={producto.title} />
                       <button style={{ margin: "4%", borderRadius: "5px" }} onClick={() => agregarAlCarrito(producto)} > Agregar</button>
-                      
+                      <ToastContainer position="top-left"
+    autoClose={false} removeDelay= {1000} onClick={close}/>
                       {/* <button type="button" className="btn-primary">Primary</button> */}
                       <Link to={`/productos/${producto.id}`} > Detalles </Link>
                     </li>

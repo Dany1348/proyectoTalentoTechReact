@@ -1,4 +1,7 @@
 import { createContext, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // Crear el contexto
 export const  CarritoContext = createContext();
 // Proveedor del contexto
@@ -38,7 +41,7 @@ export const CarritoProvider = ({ children }) => {
     else {
       addQuantity(producto.id) ;
     }
-
+    toast.success("Producto agregado al carrito!");
     console.log(" Carrito al final del agregar carrito" , carrito);
   }; 
   

@@ -21,6 +21,8 @@ import RutaProtegidaC from './components/RutaProtegidaC';
 import EditarProducto from './components/EditarProducto';
 import GestionProductos from './components/GestionProductos';
 import Contenedor from './bootstrap/Contenedor';
+import RutaProtegidaA from './components/RutaProtegidaA';
+import BuscarProducto from './components/BuscarProducto';
 
 
 function App() {
@@ -33,9 +35,21 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<Inicio />} />
-          <Route path='/admin' element={<HomeAdmin />} />
-          <Route path='/editar' element={<EditarProducto />} />
-          <Route path='/gestionproductos' element={<GestionProductos />} />
+          {/*<Route path='/admin' element={<HomeAdmin />} /> */}
+          <Route path='/admin' element={
+            <RutaProtegidaA>
+              <HomeAdmin />
+            </RutaProtegidaA>
+          } />
+          <Route path='/productos' element={<Productos />} />
+          <Route path='/productos/find' element={<BuscarProducto />} />
+          {/*<Route path='/gestionproductos' element={<GestionProductos />} /> */}
+          <Route path='/gestionproductos' element={
+            <RutaProtegidaA>
+              <GestionProductos />
+            </RutaProtegidaA>
+          } />
+
          {/* <Route path='/carrito' element={<Carrito />} /> */}
           <Route path='/carrito' element={
             <RutaProtegidaC>
@@ -49,7 +63,7 @@ function App() {
           <Route path='/contenedor' element={<Contenedor/>}/>
         </Routes>
 
-        <Gallery />
+        {/*<Gallery /> */}
         <Footer />
       </div>
 
