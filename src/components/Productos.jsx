@@ -57,7 +57,13 @@ const Productos = ({ agregarProducto }) => {
                       <img style={{ margin: "4%", borderRadius: "5px" }} src={producto.image} height={80} width={80} alt={producto.title} />
                       <button style={{ margin: "4%", borderRadius: "5px" }} onClick={() => agregarAlCarrito(producto)} > Agregar</button>
                       <ToastContainer position="top-left"
-    autoClose={false} removeDelay= {1000} onClick={close}/>
+     removeDelay= {1000}
+    autoClose={1800}
+          hideProgressBar={false}
+          closeOnClick={true}
+          pauseOnHover
+          theme="colored"
+    />
                       {/* <button type="button" className="btn-primary">Primary</button> */}
                       <Link to={`/productos/${producto.id}`} > Detalles </Link>
                     </li>

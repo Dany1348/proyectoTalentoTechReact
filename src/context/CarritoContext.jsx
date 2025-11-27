@@ -85,7 +85,7 @@ const removeFromCart = (id) => {
     else {
       eliminarDelCarrito(indiceAEliminar) ;
     }
-
+    toast.info("Producto elimnado", { icon: "🧹" });
     console.log(" Carrito al final del agregar carrito" , carrito);
   }; 
 
