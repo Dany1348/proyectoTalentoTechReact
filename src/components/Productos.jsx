@@ -14,9 +14,10 @@ const Productos = ({ agregarProducto }) => {
 
   const { agregarAlCarrito } = useContext(CarritoContext);
 
-  const URL = 'https://fakestoreapi.com/products/';
+  const productosPorPagina = 8;
+  const [paginaActual, setPaginaActual] = useState(1);
 
-  // 'https://691ce990d58e64bf0d34613a.mockapi.io/api/v1';
+  const URL = 'https://fakestoreapi.com/products/';
   const URL2 = 'https://691ce990d58e64bf0d34613a.mockapi.io/productos';
 
   useEffect(() => {
@@ -42,13 +43,21 @@ const Productos = ({ agregarProducto }) => {
      toast.success("Producto agregado al carrito!");
  };*/
 
+  const indiceUltimoProducto = paginaActual * productosPorPagina;
+  const indicePrimerProducto = indiceUltimoProducto - productosPorPagina;
+  const productosActuales = productos.slice(indicePrimerProducto, indiceUltimoProducto);
+
+  // Cambiar de pagina
+  const totalPaginas = Math.ceil(productos.length / productosPorPagina);
+  const cambiarPagina = (numeroPagina) => setPaginaActual(numeroPagina);
+
   return (
     <div>
       <h2>Productos en Existencia</h2>
       <div className="container">
         <div className="row">
           <ul>
-            {productos.map((producto) => {
+            {productosActuales.map((producto) => {
               return (
                 producto.cantidad > 0 ?
                   <div className="col-12 col-md-6 col-lg-4">
@@ -57,15 +66,15 @@ const Productos = ({ agregarProducto }) => {
                       <img style={{ margin: "4%", borderRadius: "5px" }} src={producto.image} height={80} width={80} alt={producto.title} />
                       <button style={{ margin: "4%", borderRadius: "5px" }} onClick={() => agregarAlCarrito(producto)} > Agregar</button>
                       <ToastContainer position="top-left"
-     removeDelay= {1000}
-    autoClose={1800}
-          hideProgressBar={false}
-          closeOnClick={true}
-          pauseOnHover
-          theme="colored"
-    />
+                        removeDelay={1000}
+                        autoClose={1800}
+                        hideProgressBar={false}
+                        closeOnClick={true}
+                        pauseOnHover
+                        theme="colored"
+                      />
                       {/* <button type="button" className="btn-primary">Primary</button> */}
-                      <Link to={`/productos/${producto.id}`} > Detalles </Link>
+                      <Link style={{ color: "yellowgreen", borderRadius: "5px" }} to={`/productos/${producto.id}`} > Detalles </Link>
                     </li>
                   </div>
                   : true
@@ -75,7 +84,22 @@ const Productos = ({ agregarProducto }) => {
           </ul>
         </div>
       </div>
-
+<div className="flex justify-center gap-2 my-8">
+        {Array.from({ length: totalPaginas }, (_, indice) => (
+          <button
+            key={indice + 1}
+            className={`px-3 py-1.5 rounded ${
+              paginaActual === indice + 1 
+                ? "bg-black text-white" 
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+            }`}
+            onClick={() => cambiarPagina(indice + 1)}
+          >
+            {indice + 1}
+          </button>
+        ))}
+      </div>
+      <br></br>
       <Link to={`/carrito`} >
         <button className="btn btn-warning">
           <FaShoppingCart /> Carrito

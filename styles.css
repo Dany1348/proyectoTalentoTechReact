@@ -10,8 +10,8 @@ header {
   border-radius: 15px;
   /* position: fixed; */
   max-height: auto;
-  /* position:sticky;
-    top: 10px; */
+  position:sticky;
+    top: -15%; 
 }
 
 main {
