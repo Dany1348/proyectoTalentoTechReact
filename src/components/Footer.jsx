@@ -1,13 +1,17 @@
 import React from 'react';
-import Twiter from '../img/Twiter.jpg'
+import Twiter from '../img/Twiter.jpg';
+import greenforest from '../../src/assets/greenforest.png';
+
+
 function Footer() {
     return (
         <footer style={{
-            backgroundColor: "#e43cf4ff", padding: "10px",
+            backgroundColor: "#7cf43cff", padding: "10px",
             textAlign: "center", marginTop: "20px" ,color:"blue",
             paddingTop:"160px",
             height: "260px" , fontSize: "15px",
-            backgroundImage: "url(../../src/img/greenforest.png)"
+            //backgroundImage: "url(../../src/img/greenforest.png)",
+            backgroundImage: "url('../../src/assets/greenforest.png')",
         }}>
             <div verticalAlign="center" class="redesSociales">
                 <img class="RSocial" src="../../src/img/Fcabook.png" alt="Facebook"></img>
