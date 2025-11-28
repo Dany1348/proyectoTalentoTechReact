@@ -16,7 +16,7 @@ function Header() {
                  <img src="/tiger-feline-animal-image-pixabay-16.png" title="Logo de Tiger" id="Logo" width="6%"  alt="img tigre"/>                          
                
                 Tienda Talento Tech React </h1>
-            <Nav></Nav>
+            {/*<Nav></Nav> */}
             <NavBar></NavBar>
         </header>
     );
