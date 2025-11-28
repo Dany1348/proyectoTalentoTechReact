@@ -10,14 +10,14 @@ function Footer() {
             textAlign: "center", marginTop: "20px" ,color:"blue",
             paddingTop:"160px",
             height: "260px" , fontSize: "15px",
-            //backgroundImage: "url(../../src/img/greenforest.png)",
-            backgroundImage: "url('../../src/assets/greenforest.png')",
+            //backgroundImage: "url(/greenforest.png)",
+            backgroundImage: "url('/greenforest.png')",
         }}>
             <div verticalAlign="center" class="redesSociales">
-                <img class="RSocial" src="../../src/img/Fcabook.png" alt="Facebook"></img>
-                <img class="RSocial" src="../../src/img/Instagrampng.png" alt="Instagram"></img>
-                <img class="RSocial" src="../../src/img/Twiter.jpg" alt="Twitter"></img>
-                <img class="RSocial" src="../../src/img/Tik tok1.png" alt="TikTok"></img>
+                <img class="RSocial" src="/Fcabook.png" alt="Facebook"></img>
+                <img class="RSocial" src="/Instagrampng.png" alt="Instagram"></img>
+                <img class="RSocial" src="/Twiter.jpg" alt="Twitter"></img>
+                <img class="RSocial" src="/Tik tok1.png" alt="TikTok"></img>
                 <p style={{color:"blue", backgroundColor:"aquamarine"}}>&copy; 2025 - Mi Aplicación React</p>
             </div>
             
