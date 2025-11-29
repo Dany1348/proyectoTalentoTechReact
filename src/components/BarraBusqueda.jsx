@@ -16,7 +16,22 @@ const BarraBusqueda = () => {
   };
 
   return (
-    <form class="max-w-md mx-auto">
+    <form className="d-flex" role="search">
+            <input style={{
+              backgroundColor: "rgb(32, 196, 142)", color: "white", padding:
+                "10px"
+            }}value={busqueda}
+          onChange={manejarBusqueda} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+           {/* <button className="btn btn-outline-success" type="submit">Search</button> */}
+          </form>
+   
+  );
+};
+
+export default BarraBusqueda;
+
+
+{/* <form class="max-w-md mx-auto">
       <div class="relative">
         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
           <svg
@@ -45,8 +60,4 @@ const BarraBusqueda = () => {
           onChange={manejarBusqueda}
         />
       </div>
-    </form>
-  );
-};
-
-export default BarraBusqueda;
+    </form> */}

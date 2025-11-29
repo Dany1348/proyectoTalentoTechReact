@@ -16,11 +16,11 @@ function NavBar() {
   return (
 
     <nav className="navbar navbar-expand-md navbar-expand-lg bg-body-tertiary" style={{
-      backgroundColor: "blue", color: "magenta", padding:
+      backgroundColor: "", color: "magenta", padding:
         "5px", top: "0"
     }} >
       <div style={{
-        backgroundColor: "blue", color: "magenta", padding:
+        background: "linear-gradient(to right,rgba(43, 2, 137, 1), blue,  magenta)", color: "magenta", padding:
           "10px"
       }} className="container-fluid">
         {/*<a style={{
