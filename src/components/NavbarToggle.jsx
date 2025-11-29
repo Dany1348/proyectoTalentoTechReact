@@ -5,6 +5,7 @@ import { useState } from 'react';
 //import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../context/AuthContext';
 import { HiEmojiHappy } from "react-icons/hi";
+import BarraBusqueda from './BarraBusqueda';
 
 function NavBar() {
   const [logueado, setLogueado] = useState(null);
@@ -94,13 +95,14 @@ function NavBar() {
               <a className="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>
           </ul>
-          <form className="d-flex" role="search">
+          {/*<form className="d-flex" role="search">
             <input style={{
               backgroundColor: "rgb(32, 196, 142)", color: "white", padding:
                 "10px"
             }} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          </form> */}
+      <BarraBusqueda></BarraBusqueda>
         </div>
       </div>
     </nav>

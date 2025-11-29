@@ -25,6 +25,7 @@ import RutaProtegidaA from './components/RutaProtegidaA';
 import BuscarProducto from './components/BuscarProducto';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Busqueda from './components/Busqueda';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -81,6 +82,8 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/moda' element={<Moda />} />
           <Route path='/tecnologia' element={<Tecnologia />} />
+          <Route path='/busqueda' element={<Busqueda />} />
+          
           <Route path='/productos/:id' element={<ProductoDetalle />} />
           <Route path='/contenedor' element={<Contenedor/>}/>
         </Routes>
