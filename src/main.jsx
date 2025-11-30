@@ -11,15 +11,17 @@ import { SearchProvider } from './context/BusquedaContext.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <AuthContext>
-        <ProductoProvider>
-          <SearchProvider>
-            <CarritoContext>
-              <App />
-            </CarritoContext>
-          </SearchProvider>
-        </ProductoProvider>
-      </AuthContext>
+      <CarritoContext>
+        <AuthContext>
+          <ProductoProvider>
+            <SearchProvider>
+              <CarritoContext>
+                <App />
+              </CarritoContext>
+            </SearchProvider>
+          </ProductoProvider>
+        </AuthContext>
+      </CarritoContext>
     </BrowserRouter>
   </StrictMode>,
 )

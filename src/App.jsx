@@ -11,7 +11,8 @@ import Footer from './components/Footer';
 import Productos from './components/Productos';
 import Inicio from './pages/Inicio';
 import Moda from './pages/Moda';
-import Tecnologia from './pages/Tecnologia';
+//import Tecnologia from './pages/Tecnologia';
+import Tecnologia from './pages/Technology';
 import ProductoDetalle from './pages/ProductoDetalle';
 import { Route, Routes } from 'react-router-dom';
 import Carrito from './components/Carrito';
@@ -22,6 +23,7 @@ import EditarProducto from './components/EditarProducto';
 import GestionProductos from './components/GestionProductos';
 import Contenedor from './bootstrap/Contenedor';
 import RutaProtegidaA from './components/RutaProtegidaA';
+import RutaProtegidaL from './components/RutaProtegidaL';
 import BuscarProducto from './components/BuscarProducto';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -73,19 +75,24 @@ function App() {
             </RutaProtegidaA>
           } />
 
-         {/* <Route path='/carrito' element={<Carrito />} /> */}
+          {/* <Route path='/carrito' element={<Carrito />} /> */}
           <Route path='/carrito' element={
             <RutaProtegidaC>
               <Carrito />
             </RutaProtegidaC>
           } />
-          <Route path='/login' element={<Login />} />
+          {/*<Route path='/login' element={<Login />} /> */}
+          <Route path='/login' element={
+            <RutaProtegidaL>
+              <Login />
+            </RutaProtegidaL>
+          } />
           <Route path='/moda' element={<Moda />} />
           <Route path='/tecnologia' element={<Tecnologia />} />
           <Route path='/busqueda' element={<Busqueda />} />
-          
+
           <Route path='/productos/:id' element={<ProductoDetalle />} />
-          <Route path='/contenedor' element={<Contenedor/>}/>
+          <Route path='/contenedor' element={<Contenedor />} />
         </Routes>
 
         {/*<Gallery /> */}

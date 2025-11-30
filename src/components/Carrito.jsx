@@ -19,7 +19,7 @@ const Carrito = ({ productosEnCarrito, productosEliminados }) => {
       <div>
         {carrito.length == 0 ? <p> Todavia no hay nada agregado al carrito </p>
         : <></> }
-        {console.log("Esto tiene el carrto", carrito)}
+        {console.log("Esto tiene el carrito", carrito)}
         
       </div>
       

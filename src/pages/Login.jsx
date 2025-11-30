@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState , useEffect ,useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../context/AuthContext';
+import { CarritoContext } from '../context/CarritoContext';
 
 const Login = () => {
   const [usuario, setUsuario] = useState('');
@@ -9,6 +10,13 @@ const Login = () => {
   
   const { login } = useAuthContext();
   const navigate = useNavigate();
+
+  const {vaciarCarrito} = useContext(CarritoContext);
+
+  useEffect(()=> {
+    vaciarCarrito();
+  }, [])
+
   
   const manejarSubmit = (evento) => {
     evento.preventDefault();
