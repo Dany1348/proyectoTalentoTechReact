@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   const [usuario, setUsuario] = useState(null);
   const [rol, setRol] = useState(null);
-  const { carrito, eliminarDelCarrito, actualizarElCarrito, vaciarCarrito } = useContext(CarritoContext);
+  //const { carrito, eliminarDelCarrito, actualizarElCarrito, vaciarCarrito } = useContext(CarritoContext);
   
   const login = (nombreUsuario , rolUsuario) => {
     // Simulamos la creacion del token 

@@ -7,8 +7,10 @@ const RutaProtegidaL = ({children}) => {
 
   console.log("Usuario Context" ,usuario);
   console.log("Rol Context" ,rol);
-  if(rol == "cliente" || rol=="admin")
+  if(rol == "cliente" )
     return <Navigate to="/" replace />;
+  else if ( rol=="admin")
+    return <Navigate to="/admin" replace />;
   
   return children;
 }
