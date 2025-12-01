@@ -10,7 +10,7 @@ const Tecnologia = () => {
 
 return (
     <>
-      <h1> Tecnologia</h1>
+      <h1 style={{color:"aquamarine"}}> Tecnologia</h1>
       <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel" data-bs-interval="5000"> 
         <div className="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" aria-label="Slide 1"></button>
@@ -19,13 +19,13 @@ return (
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active"> 
-            <img src="https://t4.ftcdn.net/jpg/03/08/69/75/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXUvzTwfzwe.jpg" className="rounded mx-auto d-block w-70" alt="First slide"/>
+            <img style={{height:"200px" , objectFit:"cover"}} src="https://t4.ftcdn.net/jpg/03/08/69/75/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXUvzTwfzwe.jpg" className="rounded mx-auto d-block w-70 " alt="First slide"/>
           </div>
           <div className="carousel-item img-fluid">
-            <img src="https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZsMzcyMDYwOTMzOTEtaW1hZ2Uta3A0dnpwYmQuanBn.jpg" className="rounded mx-auto d-block w-50" alt="2"/>
+            <img style={{height:"200px" , objectFit:"cover"}} src="https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZsMzcyMDYwOTMzOTEtaW1hZ2Uta3A0dnpwYmQuanBn.jpg" className="rounded mx-auto d-block w-70" alt="2"/>
           </div>
           <div className="carousel-item">
-            <img src="https://www.publicdomainpictures.net/pictures/330000/nahled/technology-2020-15851598640jb.jpg" className="rounded mx-auto d-block w-70" alt="Third slide"/>
+            <img style={{height:"200px" , objectFit:"cover"}} src="https://www.publicdomainpictures.net/pictures/330000/nahled/technology-2020-15851598640jb.jpg" className="rounded mx-auto d-block w-70" alt="Third slide"/>
           </div>
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
