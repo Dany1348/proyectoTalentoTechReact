@@ -1,17 +1,23 @@
 import { Link } from 'react-router-dom';
 import { FaShoppingCart } from "react-icons/fa";
 //import AuthContext from '../context/AuthContext';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 //import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../context/AuthContext';
 import { HiEmojiHappy } from "react-icons/hi";
 import BarraBusqueda from './BarraBusqueda';
+import { CarritoContext } from '../context/CarritoContext';
 
 function NavBar() {
   const [logueado, setLogueado] = useState(null);
   const { usuario, logout } = useAuthContext();
+  const { carrito, vaciarCarrito } = useContext(CarritoContext);
   console.log("Esto trae el usuario desde el context   ", usuario);
 
+  const resetEvery = () => {
+    vaciarCarrito();
+    logout();
+  }
 
   return (
 
@@ -38,11 +44,11 @@ function NavBar() {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-                                <Link to={'/moda'} style={{
-                                    color: "yellow",
-                                    textDecoration: "none"
-                                }}> Moda </Link>
-                            </li>
+              <Link to={'/moda'} style={{
+                color: "yellow",
+                textDecoration: "none"
+              }}> Moda </Link>
+            </li>
             <li className="nav-item">
               {/*<a style={{
             backgroundColor: "blue", color: "white", padding:
@@ -80,16 +86,24 @@ function NavBar() {
                     textDecoration: "none",
                     borderRadius: " 50px"
                   }}>
-                    <button style={{ borderRadius: " 10px" }} onClick={logout}>Logout </button>  </Link>
+                    <button style={{ borderRadius: " 10px" }} onClick={resetEvery}>Logout </button>  </Link>
                 </>
               }
             </li>
             <li className="nav-item">
+              {usuario==null ?
               <Link to={`/carrito`} >
                 <button className="btn btn-warning ">
-                  <FaShoppingCart /> Carrito
+                  <FaShoppingCart />
+                </button>
+              </Link> :
+              <Link to={`/carrito`} >
+                <button className="btn btn-success ">
+                  <FaShoppingCart />
                 </button>
               </Link>
+            }
+              
             </li>
             <li className="nav-item">
               <a className="nav-link disabled" aria-disabled="true">Disabled</a>
@@ -102,7 +116,7 @@ function NavBar() {
             }} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button>
           </form> */}
-      <BarraBusqueda></BarraBusqueda>
+          <BarraBusqueda></BarraBusqueda>
         </div>
       </div>
     </nav>

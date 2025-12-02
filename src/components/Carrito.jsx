@@ -11,18 +11,32 @@ const Carrito = ({ productosEnCarrito, productosEliminados }) => {
 
   const { carrito, eliminarDelCarrito, actualizarElCarrito, vaciarCarrito } = useContext(CarritoContext);
 
+  const ejecutarCompra = () => {
+    
+    if (carrito.length == 0) {
+      alert("Todavia no hay nada agregado al carrito de compra !!!")
+    } else {
+      var total = 0;
+      carrito.map(producto => {
+        total = total + (producto.cantidad * producto.price); 
+      })
+      console.log(" Esto se acumula en total  " , total);
+      alert(`Felicitaciones por su compra de $  : ${total}`);
+      vaciarCarrito();
+    };
 
+  }
 
   return (
     <div>
       <h2>Carrito</h2>
       <div>
         {carrito.length == 0 ? <p> Todavia no hay nada agregado al carrito </p>
-        : <></> }
+          : <></>}
         {console.log("Esto tiene el carrito", carrito)}
-        
+
       </div>
-      
+
       <div className="container">
         <div className="row">
 
@@ -44,11 +58,11 @@ const Carrito = ({ productosEnCarrito, productosEliminados }) => {
             </div>
           ))}
         </div>
-        {carrito.length > 0 ? <button className="btn btn-success " style={{marginRight:'4em'}} onClick={() => vaciarCarrito()}>
+        {carrito.length > 0 ? <button className="btn btn-success " style={{ marginRight: '4em' }} onClick={() => vaciarCarrito()}>
           Vaciar Carrito
         </button> : <></>}
-        
-        <BotonStyled>Comprar</BotonStyled>
+
+        <BotonStyled alComprar={ejecutarCompra} variant="btn-success">Comprar</BotonStyled>
       </div>
 
     </div>

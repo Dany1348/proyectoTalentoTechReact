@@ -14,7 +14,7 @@ const Login = () => {
   const {vaciarCarrito} = useContext(CarritoContext);
 
   useEffect(()=> {
-    vaciarCarrito();
+   // vaciarCarrito();
   }, [])
 
   

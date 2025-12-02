@@ -13,8 +13,8 @@ background-color: #c70039;
 }
 `;
 
-function BotonStyled() {
-return <BotonCompra>Comprar</BotonCompra>;
+function BotonStyled({alComprar}) {
+return <BotonCompra onClick={alComprar}>Comprar</BotonCompra>;
 }
 
 export default BotonStyled;
