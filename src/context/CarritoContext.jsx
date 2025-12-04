@@ -41,7 +41,7 @@ export const CarritoProvider = ({ children }) => {
     else {
       addQuantity(producto.id) ;
     }
-    toast.success("Producto agregado al carrito!");
+    //toast.success("Producto agregado al carrito!");
     console.log(" Carrito al final del agregar carrito" , carrito);
   }; 
   

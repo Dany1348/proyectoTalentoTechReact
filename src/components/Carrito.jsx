@@ -20,7 +20,7 @@ const Carrito = ({ productosEnCarrito, productosEliminados }) => {
       carrito.map(producto => {
         total = total + (producto.cantidad * producto.price); 
       })
-      console.log(" Esto se acumula en total  " , total);
+      //console.log(" Esto se acumula en total  " , total);
       alert(`Felicitaciones por su compra de $  : ${total}`);
       vaciarCarrito();
     };

@@ -51,6 +51,13 @@ const Productos = ({ agregarProducto }) => {
   const totalPaginas = Math.ceil(productos.length / productosPorPagina);
   const cambiarPagina = (numeroPagina) => setPaginaActual(numeroPagina);
 
+  const handleClick = (producto) => {
+    agregarAlCarrito(producto);
+    toast.success(" Producto agregado con exito");
+  }
+
+
+
   return (
     <div>
       <h2>Productos en Existencia</h2>
@@ -64,35 +71,35 @@ const Productos = ({ agregarProducto }) => {
                     <li key={producto.id}>
                       <p> {producto.title} : {producto.price}$ </p>
                       <img style={{ margin: "4%", borderRadius: "5px" }} src={producto.image} height={80} width={80} alt={producto.title} />
-                      <button style={{ margin: "4%", borderRadius: "5px" }} onClick={() => agregarAlCarrito(producto)} > Agregar</button>
-                      <ToastContainer position="top-left"
-                        removeDelay={1000}
-                        autoClose={1800}
-                        hideProgressBar={false}
-                        closeOnClick={true}
-                        pauseOnHover
-                        theme="colored"
-                      />
+                      <button style={{ margin: "4%", borderRadius: "5px" }} onClick={() => handleClick(producto)} > Agregar</button>
+
                       {/* <button type="button" className="btn-primary">Primary</button> */}
                       <Link style={{ color: "yellowgreen", borderRadius: "5px" }} to={`/productos/${producto.id}`} > Detalles </Link>
                     </li>
+
                   </div>
                   : true
               )
 
             })}
           </ul>
+          <ToastContainer autoClose={3000}
+            duration={3000}
+            position="top-left"
+            removeDelay={1000}
+            hideProgressBar={false}
+            closeOnClick={true}
+            theme="colored" />
         </div>
       </div>
-<div className="flex justify-center gap-2 my-8">
+      <div className="flex justify-center gap-2 my-8">
         {Array.from({ length: totalPaginas }, (_, indice) => (
           <button
             key={indice + 1}
-            className={`px-3 py-1.5 rounded ${
-              paginaActual === indice + 1 
-                ? "bg-black text-white" 
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
+            className={`px-3 py-1.5 rounded ${paginaActual === indice + 1
+              ? "bg-black text-white"
+              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+              }`}
             onClick={() => cambiarPagina(indice + 1)}
           >
             {indice + 1}
